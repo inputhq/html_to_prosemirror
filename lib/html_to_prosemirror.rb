@@ -47,7 +47,6 @@ module HtmlToProsemirror
 
     def render(value)
       minified = minify_html(value.strip! || value)
-      puts minified
       @document = Nokogiri::HTML.fragment(minified)
       content = render_children(@document)
       return {
